@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="frontend/frontend.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="LandPagePrograssiva.AppHost/LandPagePrograssiva.AppHost.csproj" />
+  <Project Path="LandPagePrograssiva.Server/LandPagePrograssiva.Server.csproj" />
+</Solution>
