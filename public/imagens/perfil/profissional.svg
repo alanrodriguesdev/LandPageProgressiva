@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" width="720" height="900" role="presentation">
+  <defs>
+	<linearGradient id="fundoPerfil" x1="0" y1="0" x2="1" y2="1">
+	  <stop offset="0%" stop-color="#f7dfe2" />
+	  <stop offset="100%" stop-color="#efe0d4" />
+	</linearGradient>
+  </defs>
+  <rect width="720" height="900" fill="url(#fundoPerfil)" />
+  <ellipse cx="360" cy="825" rx="240" ry="120" fill="#c9a227" opacity="0.14" />
+  <path d="M360 180c-116 0-188 94-188 208 0 150 58 266 93 350h190c35-84 93-200 93-350 0-114-72-208-188-208z" fill="#5a3c2a" />
+  <ellipse cx="360" cy="310" rx="94" ry="118" fill="#e8c4a6" />
+  <path d="M360 160c-94 0-152 56-170 126 30-22 74-34 130-34 86 0 154 28 204 84-5-102-69-176-164-176z" fill="#3b2a21" opacity="0.82" />
+  <rect x="258" y="445" width="204" height="260" rx="102" fill="#fffcf9" opacity="0.92" />
+  <text x="360" y="848" font-family="Georgia, serif" font-size="28" fill="#574438" text-anchor="middle">Substituir por foto real da profissional</text>
+</svg>

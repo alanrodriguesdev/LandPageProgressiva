@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+/*
+ * Fonte única de verdade dos tokens de design (Princípio IV e FR-016).
+ * Paleta Clean Blue definida como tokens semânticos do Tailwind v4.
+ * Contrastes principais: text/bg 17.85:1, muted/bg 4.63:1,
+ * text/surface 17.85:1, muted/surface 4.76:1 e white/primary 5.17:1.
+ */
+@theme {
+  --color-bg: #fafafa;
+  --color-surface: #ffffff;
+  --color-primary: #2563eb;
+  --color-secondary: #0ea5e9;
+  --color-accent: #f97316;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1fbd59;
+
+  /* Tipografia */
+  --font-titulo: var(--fonte-titulo), Georgia, "Times New Roman", serif;
+  --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
+
+  --text-nano: 0.75rem;
+  --text-micro: 0.875rem;
+  --text-base: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  --text-corpo-grande: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+  --text-titulo-p: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-titulo-m: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --text-titulo-g: clamp(1.875rem, 1.5rem + 1.9vw, 2.75rem);
+  --text-titulo-gg: clamp(2.25rem, 1.7rem + 2.75vw, 3.75rem);
+
+  /* Espaçamento */
+  --spacing-secao: clamp(3.5rem, 2.5rem + 5vw, 6.5rem);
+  --spacing-cabecalho: 4.25rem;
+  --spacing-toque: 2.75rem;
+
+  /* Raios */
+  --radius-suave: 0.5rem;
+  --radius-cartao: 1rem;
+  --radius-bloco: 1.5rem;
+  --radius-imagem: 1.25rem;
+  --radius-total: 999px;
+
+  /* Sombras em camadas — a profundidade vem do CSS, não de WebGL (D-004) */
+  --shadow-baixa: 0 1px 2px rgb(15 23 42 / 0.05), 0 2px 8px rgb(15 23 42 / 0.04);
+  --shadow-media: 0 2px 4px rgb(15 23 42 / 0.05), 0 8px 24px rgb(15 23 42 / 0.08);
+  --shadow-alta: 0 4px 8px rgb(15 23 42 / 0.06), 0 16px 48px rgb(15 23 42 / 0.12);
+
+  /* Duração de transição */
+  --duracao-rapida: 150ms;
+  --duracao-media: 300ms;
+  --duracao-lenta: 600ms;
+
+  /* Rastreamento de letras */
+  --tracking-expandido: 0.18em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-text;
+    font-family: var(--font-corpo);
+    font-size: var(--text-base);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-titulo);
+    color: var(--color-text);
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Indicador de foco visível em todo elemento interativo (FR-015, FR-020) */
+  :focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: var(--radius-suave);
+  }
+
+  /* Compensa o cabeçalho fixo ao saltar por âncora (D-011) */
+  [id] {
+    scroll-margin-top: calc(var(--spacing-cabecalho) + 1rem);
+  }
+
+  /* O alvo da âncora recebe foco programático sem exibir contorno espúrio */
+  section[tabindex="-1"]:focus {
+    outline: none;
+  }
+}
+
+@layer components {
+  /* Transições de entrada (T060). Sem JavaScript quando o navegador
+     suporta animation-timeline; o IntersectionObserver é o fallback. */
+  .revelar {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition:
+      opacity var(--duracao-lenta) ease-out,
+      transform var(--duracao-lenta) ease-out;
+    will-change: opacity, transform;
+  }
+
+  .revelar[data-visivel="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer utilities {
+  .texto-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Link de pular conteúdo: invisível até receber foco (FR-020). */
+  .pular-conteudo {
+    position: absolute;
+    left: 1rem;
+    top: -100%;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-suave);
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    font-weight: 600;
+    transition: top var(--duracao-rapida) ease-out;
+  }
+
+  .pular-conteudo:focus {
+    top: 1rem;
+  }
+
+  .grade-hero {
+    display: grid;
+  }
+
+  .grade-sobre {
+    display: grid;
+  }
+}
+
+@media (min-width: 64rem) {
+  .grade-hero {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  .grade-sobre {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+}
+
+/*
+ * Redução de movimento (FR-019, SC-007): nenhuma informação ou função
+ * depende de animação, portanto desligar tudo é seguro.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .revelar {
+    opacity: 1;
+    transform: none;
+  }
+}
