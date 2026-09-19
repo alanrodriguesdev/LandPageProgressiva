@@ -271,8 +271,3 @@ export function validarReferenciasDeTrabalhos(
     }
   }
 }
-
-/** Indica se algum texto ainda carrega o marcador de valor provisório (FR-030). */
-export function contemPendencia(valor: unknown): boolean {
-  return JSON.stringify(valor ?? null).includes(MARCADOR_PENDENTE);
-}

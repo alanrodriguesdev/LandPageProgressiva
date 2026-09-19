@@ -19,8 +19,8 @@ import { resumirAvaliacoes } from "@/lib/avaliacoes";
 import { montarLinkWhatsApp } from "@/lib/whatsapp";
 
 const IMAGEM_HERO = {
-  src: "/imagens/hero.svg",
-  alt: "Cliente com cabelo alinhado e brilhante após o atendimento no salão",
+  src: "/imagens/hero.jpg",
+  alt: "Cliente com cabelo alinhado, liso e brilhante após o atendimento no salão",
   largura: 900,
   altura: 1100,
 } as const;

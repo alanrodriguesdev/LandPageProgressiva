@@ -11,7 +11,7 @@ export const servicos: Servico[] = validarColecao("servicos", esquemaServico, [
     descricao:
       "Alinhamento capilar com acabamento natural, brilho e movimento suave no fio.",
     duracaoEstimada: "3 a 4 horas",
-    faixaInvestimento: "A partir de R$ 320",
+    faixaInvestimento: "A partir de R$ 180",
     destaque: true,
   },
   {

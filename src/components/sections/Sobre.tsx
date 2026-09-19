@@ -27,7 +27,7 @@ export function Sobre({ perfil }: PropriedadesSobre) {
         </div>
 
         <div className="flex flex-col gap-5">
-          <Titulo id="titulo-sobre" sobretitulo="Sobre" centralizado={false}>
+          <Titulo id="titulo-sobre" centralizado={false}>
             {perfil.nome}
           </Titulo>
 

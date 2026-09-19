@@ -15,7 +15,6 @@ export function ChamadaAcao({ linkWhatsApp }: PropriedadesChamadaAcao) {
         <Titulo
           id="titulo-chamada"
           claro
-          sobretitulo="Vamos começar"
           descricao="Me conte o que você quer para o seu cabelo. Avalio o seu caso e indico a técnica certa — mesmo que não seja a mais cara."
         >
           Seu horário pode ser esta semana

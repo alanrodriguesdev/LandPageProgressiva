@@ -3,8 +3,6 @@ import { cn } from "@/lib/utils";
 
 interface PropriedadesTitulo {
   id?: string;
-  /** Sobretítulo curto que contextualiza a seção. */
-  sobretitulo?: string;
   descricao?: string;
   nivel?: 2 | 3;
   centralizado?: boolean;
@@ -16,7 +14,6 @@ interface PropriedadesTitulo {
 /** Cabeçalho de seção com hierarquia semântica explícita e opcionalmente clara. */
 export function Titulo({
   id,
-  sobretitulo,
   descricao,
   nivel = 2,
   centralizado = true,
@@ -34,18 +31,6 @@ export function Titulo({
         className,
       )}
     >
-      {sobretitulo ? (
-        <p
-          className={cn(
-            "inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-surface px-3 py-1 text-micro font-semibold uppercase tracking-[0.18em]",
-            claro ? "text-text" : "text-primary",
-          )}
-        >
-          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent" />
-          {sobretitulo}
-        </p>
-      ) : null}
-
       <Marcacao
         id={id}
         className={cn(

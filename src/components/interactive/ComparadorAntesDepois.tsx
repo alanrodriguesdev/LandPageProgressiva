@@ -25,7 +25,7 @@ export function ComparadorAntesDepois({ trabalho }: PropriedadesComparador) {
 
   return (
     <figure className="flex flex-col gap-3">
-      <div className="relative overflow-hidden rounded-cartao border border-slate-200 shadow-media">
+      <div className="relative overflow-hidden rounded-cartao shadow-media">
         <div className="relative aspect-4/5 w-full">
           <Image
             src={trabalho.antes.src}

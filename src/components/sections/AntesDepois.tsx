@@ -16,13 +16,24 @@ export function AntesDepois({ trabalhos }: PropriedadesAntesDepois) {
       <div className="flex flex-col gap-10">
         <Titulo
           id="titulo-antes-depois"
-          sobretitulo="Resultados"
           descricao="Trabalhos reais de clientes, publicados com autorização. Arraste o controle para revelar o depois."
         >
           Antes e depois
         </Titulo>
 
-        <ul className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        {/*
+         * Colunas fixas em 3 deixam um canto vazio com 1 ou 2 trabalhos.
+         * Com poucos itens, centraliza e limita a largura em vez de esticar
+         * a grade — a galeria cresce para 3+ colunas só quando há conteúdo
+         * suficiente para preenchê-las.
+         */}
+        <ul
+          className={
+            trabalhos.length >= 3
+              ? "grid gap-7 sm:grid-cols-2 lg:grid-cols-3"
+              : "mx-auto grid max-w-2xl gap-7 sm:grid-cols-2"
+          }
+        >
           {trabalhos.map((trabalho) => (
             <li key={trabalho.id}>
               <ComparadorAntesDepois trabalho={trabalho} />

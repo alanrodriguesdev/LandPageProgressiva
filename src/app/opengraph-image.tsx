@@ -18,8 +18,8 @@ export default function OpenGraphImage() {
           justifyContent: "space-between",
           padding: "56px",
           background:
-            "radial-gradient(circle at top right, rgba(14,165,233,0.16), transparent 35%), linear-gradient(135deg, #fafafa 0%, #ffffff 52%, #fafafa 100%)",
-          color: "#0f172a",
+            "radial-gradient(circle at top right, rgba(201,166,107,0.20), transparent 35%), linear-gradient(135deg, #fbf6f2 0%, #ffffff 52%, #fbf6f2 100%)",
+          color: "#2b1f1d",
           fontFamily: "Georgia, serif",
         }}
       >
@@ -35,7 +35,7 @@ export default function OpenGraphImage() {
             fontWeight: 600,
           }}
         >
-          <div style={{ width: "12px", height: "12px", borderRadius: "999px", background: "#f97316" }} />
+          <div style={{ width: "12px", height: "12px", borderRadius: "999px", background: "#c97c5d" }} />
           {negocio.nome}
         </div>
 
@@ -43,11 +43,11 @@ export default function OpenGraphImage() {
           <div style={{ fontSize: "74px", lineHeight: 1.05, fontWeight: 700 }}>
             Progressiva com brilho e movimento natural
           </div>
-          <div style={{ fontSize: "32px", lineHeight: 1.35, color: "#64748b" }}>{negocio.descricaoCurta}</div>
+          <div style={{ fontSize: "32px", lineHeight: 1.35, color: "#7a6a63" }}>{negocio.descricaoCurta}</div>
         </div>
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div style={{ fontSize: "28px", color: "#64748b" }}>{negocio.areaAtendimento}</div>
+          <div style={{ fontSize: "28px", color: "#7a6a63" }}>{negocio.areaAtendimento}</div>
           <div
             style={{
               display: "inline-flex",
@@ -55,7 +55,7 @@ export default function OpenGraphImage() {
               justifyContent: "center",
               borderRadius: "999px",
               padding: "16px 26px",
-              background: "#f97316",
+              background: "#a8434e",
               color: "#ffffff",
               fontSize: "28px",
               fontWeight: 700,

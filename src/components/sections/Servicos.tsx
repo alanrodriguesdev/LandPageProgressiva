@@ -20,7 +20,6 @@ export function Servicos({ servicos }: PropriedadesServicos) {
       <RevelarAoEntrar className="flex flex-col gap-10">
         <Titulo
           id="titulo-servicos"
-          sobretitulo="Serviços"
           descricao="Valores de referência. O orçamento final depende do comprimento, da densidade e do histórico químico do seu cabelo."
         >
           O que eu faço
@@ -29,7 +28,7 @@ export function Servicos({ servicos }: PropriedadesServicos) {
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {servicos.map((servico) => (
             <li key={servico.id}>
-              <Cartao destacado={servico.destaque} className={servico.destaque ? "border-slate-200 bg-surface" : ""}>
+              <Cartao destacado={servico.destaque}>
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-titulo-p">{servico.nome}</h3>
                   {servico.destaque ? <Badge tom="destaque">Mais procurado</Badge> : null}
@@ -49,6 +48,11 @@ export function Servicos({ servicos }: PropriedadesServicos) {
                     <Badge tom="acento">{servico.faixaInvestimento}</Badge>
                   ) : null}
                 </div>
+
+                {/* Todo valor é estimativa: o preço final depende da análise do cabelo no dia. */}
+                {servico.faixaInvestimento ? (
+                  <p className="mt-1.5 text-nano text-muted">*Valor sujeito a análise do cabelo</p>
+                ) : null}
 
                 <Botao
                   href={montarLinkWhatsApp({ servico: servico.nome, origem: `servico-${servico.id}` })}

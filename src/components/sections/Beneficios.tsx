@@ -1,5 +1,4 @@
 import { RevelarAoEntrar } from "@/components/interactive/RevelarAoEntrar";
-import { Cartao } from "@/components/ui/Cartao";
 import { Secao } from "@/components/ui/Secao";
 import { Titulo } from "@/components/ui/Titulo";
 import { obterIcone } from "@/components/ui/icones";
@@ -18,24 +17,23 @@ export function Beneficios({ beneficios }: PropriedadesBeneficios) {
       <RevelarAoEntrar className="flex flex-col gap-10">
         <Titulo
           id="titulo-beneficios"
-          sobretitulo="Por que aqui"
           descricao="O que você encontra em cada atendimento, independentemente do serviço escolhido."
         >
           Cuidado antes do resultado
         </Titulo>
 
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-x-10 gap-y-9 sm:grid-cols-2">
           {beneficios.map((beneficio) => {
             const Icone = obterIcone(beneficio.icone);
             return (
-              <li key={beneficio.id}>
-                <Cartao>
-                  <span className="flex h-12 w-12 items-center justify-center rounded-total bg-bg text-primary shadow-baixa">
-                    <Icone className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-4 text-titulo-p">{beneficio.titulo}</h3>
-                  <p className="mt-2 text-micro text-muted">{beneficio.descricao}</p>
-                </Cartao>
+              <li key={beneficio.id} className="flex gap-4">
+                <span className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Icone className="h-5 w-5" />
+                </span>
+                <div>
+                  <h3 className="text-titulo-p">{beneficio.titulo}</h3>
+                  <p className="mt-1.5 text-micro text-muted">{beneficio.descricao}</p>
+                </div>
               </li>
             );
           })}

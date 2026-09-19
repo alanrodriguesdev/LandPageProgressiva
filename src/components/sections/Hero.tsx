@@ -102,7 +102,7 @@ export function Hero({
         </div>
 
         <div className="relative hidden lg:block">
-          <div className="overflow-hidden rounded-bloco border border-slate-200 bg-gradient-to-r from-primary to-secondary p-3 shadow-alta">
+          <div className="overflow-hidden rounded-bloco bg-gradient-to-r from-primary to-secondary p-3 shadow-alta">
             <Image
               src={imagem.src}
               alt={imagem.alt}

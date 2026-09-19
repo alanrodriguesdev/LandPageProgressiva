@@ -2,10 +2,10 @@ import { Botao } from "@/components/ui/Botao";
 import { Cartao } from "@/components/ui/Cartao";
 import { Secao } from "@/components/ui/Secao";
 import { Titulo } from "@/components/ui/Titulo";
-import { IconeEmail, IconeLocal, IconeRelogio, IconeWhatsApp } from "@/components/ui/icones";
+import { IconeEmail, IconeLocal, IconeRelogio, IconeTelefone, IconeWhatsApp } from "@/components/ui/icones";
 import type { Negocio } from "@/content/schema";
 import { formatarHorarios } from "@/lib/seo";
-import { formatarTelefoneExibicao, montarLinkEmail } from "@/lib/whatsapp";
+import { formatarTelefoneExibicao, montarLinkEmail, montarLinkTelefone } from "@/lib/whatsapp";
 
 interface PropriedadesContato {
   negocio: Negocio;
@@ -21,16 +21,12 @@ export function Contato({ negocio, linkWhatsApp }: PropriedadesContato) {
   return (
     <Secao id="contato" rotuladaPor="titulo-contato" fundo="fundo">
       <div className="flex flex-col gap-10">
-        <Titulo
-          id="titulo-contato"
-          sobretitulo="Contato"
-          descricao="Escolha o canal que for mais confortável para você."
-        >
+        <Titulo id="titulo-contato" descricao="Escolha o canal que for mais confortável para você.">
           Onde me encontrar
         </Titulo>
 
-        <div className="grid gap-5 md:grid-cols-2">
-          <Cartao className="border-slate-200">
+        <div className="grid gap-5 md:grid-cols-3">
+          <Cartao>
             <IconeWhatsApp className="h-7 w-7 text-whatsapp" />
             <h3 className="mt-3 text-titulo-p">WhatsApp</h3>
             <p className="mt-2 flex-1 text-micro text-muted">
@@ -44,6 +40,24 @@ export function Contato({ negocio, linkWhatsApp }: PropriedadesContato) {
               data-canal="whatsapp"
             >
               {formatarTelefoneExibicao(negocio.whatsapp)}
+            </Botao>
+          </Cartao>
+
+          {/* FR-012: alternativa de contato por telefone, além do WhatsApp e do e-mail. */}
+          <Cartao>
+            <IconeTelefone className="h-7 w-7 text-primary" />
+            <h3 className="mt-3 text-titulo-p">Ligação</h3>
+            <p className="mt-2 flex-1 text-micro text-muted">
+              Prefere falar por voz? É o mesmo número, você é quem escolhe.
+            </p>
+            <Botao
+              href={montarLinkTelefone()}
+              variante="sutil"
+              className="mt-5 w-full"
+              data-agendamento="contato"
+              data-canal="telefone"
+            >
+              Ligar agora
             </Botao>
           </Cartao>
 

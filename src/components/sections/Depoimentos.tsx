@@ -26,14 +26,13 @@ export function Depoimentos({ depoimentos, resumo }: PropriedadesDepoimentos) {
       <RevelarAoEntrar className="flex flex-col gap-10">
         <Titulo
           id="titulo-depoimentos"
-          sobretitulo="Depoimentos"
           descricao="Avaliações publicadas com autorização das clientes, sem filtro de nota."
         >
           O que dizem as clientes
         </Titulo>
 
         <p
-          className="mx-auto flex flex-wrap items-center justify-center gap-3 rounded-total border border-slate-200 bg-surface px-6 py-3 text-center shadow-baixa"
+          className="mx-auto flex flex-wrap items-center justify-center gap-3 rounded-total bg-surface px-6 py-3 text-center shadow-baixa"
           data-teste="resumo-avaliacoes"
         >
           <Avaliacao nota={Math.round(resumo.media)} />

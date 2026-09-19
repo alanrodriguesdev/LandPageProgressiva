@@ -21,7 +21,6 @@ export default function PaginaPrivacidade() {
           <Titulo
             id="titulo-privacidade"
             centralizado={false}
-            sobretitulo="Privacidade"
             descricao="Resumo objetivo de como esta landing page trata conteúdo e contato."
           >
             Aviso de privacidade

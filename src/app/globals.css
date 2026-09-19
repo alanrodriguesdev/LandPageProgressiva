@@ -2,18 +2,21 @@
 
 /*
  * Fonte única de verdade dos tokens de design (Princípio IV e FR-016).
- * Paleta Clean Blue definida como tokens semânticos do Tailwind v4.
- * Contrastes principais: text/bg 17.85:1, muted/bg 4.63:1,
- * text/surface 17.85:1, muted/surface 4.76:1 e white/primary 5.17:1.
+ * Paleta "Rosewood & Gold" — tons quentes de rosa envelhecido, dourado e
+ * terracota, alinhados à identidade de um salão de beleza especializado
+ * em progressivas (harmoniza com os tons já presentes nas ilustrações
+ * de public/imagens).
+ * Contrastes principais: text/bg 14.88:1, muted/bg 4.81:1,
+ * text/surface 15.97:1, muted/surface 5.16:1 e white/primary 5.87:1.
  */
 @theme {
-  --color-bg: #fafafa;
+  --color-bg: #fbf6f2;
   --color-surface: #ffffff;
-  --color-primary: #2563eb;
-  --color-secondary: #0ea5e9;
-  --color-accent: #f97316;
-  --color-text: #0f172a;
-  --color-muted: #64748b;
+  --color-primary: #a8434e;
+  --color-secondary: #c9a66b;
+  --color-accent: #c97c5d;
+  --color-text: #2b1f1d;
+  --color-muted: #7a6a63;
   --color-whatsapp: #25d366;
   --color-whatsapp-hover: #1fbd59;
 
