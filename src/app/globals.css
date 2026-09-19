@@ -2,21 +2,21 @@
 
 /*
  * Fonte única de verdade dos tokens de design (Princípio IV e FR-016).
- * Paleta "Rosewood & Gold" — tons quentes de rosa envelhecido, dourado e
- * terracota, alinhados à identidade de um salão de beleza especializado
- * em progressivas (harmoniza com os tons já presentes nas ilustrações
- * de public/imagens).
- * Contrastes principais: text/bg 14.88:1, muted/bg 4.81:1,
- * text/surface 15.97:1, muted/surface 5.16:1 e white/primary 5.87:1.
+ * Paleta "Editorial Gold" — referência: lorealprofessionnel.com.br
+ * (preto/tinta + branco como base neutra, um único dourado envelhecido
+ * como acento). Estética de salão profissional/editorial, flat, com
+ * pouca sombra e tipografia com mais rastreamento no lugar de cor extra.
+ * Contrastes principais: text/bg 17.04:1, muted/bg 4.93:1,
+ * text/surface 18.42:1, muted/surface 5.33:1 e white/primary 4.90:1.
  */
 @theme {
-  --color-bg: #fbf6f2;
+  --color-bg: #f7f6f3;
   --color-surface: #ffffff;
-  --color-primary: #a8434e;
-  --color-secondary: #c9a66b;
-  --color-accent: #c97c5d;
-  --color-text: #2b1f1d;
-  --color-muted: #7a6a63;
+  --color-primary: #8a6d23;
+  --color-secondary: #141414;
+  --color-accent: #8a6d23;
+  --color-text: #141414;
+  --color-muted: #6b6b6b;
   --color-whatsapp: #25d366;
   --color-whatsapp-hover: #1fbd59;
 
@@ -45,10 +45,11 @@
   --radius-imagem: 1.25rem;
   --radius-total: 999px;
 
-  /* Sombras em camadas — a profundidade vem do CSS, não de WebGL (D-004) */
-  --shadow-baixa: 0 1px 2px rgb(15 23 42 / 0.05), 0 2px 8px rgb(15 23 42 / 0.04);
-  --shadow-media: 0 2px 4px rgb(15 23 42 / 0.05), 0 8px 24px rgb(15 23 42 / 0.08);
-  --shadow-alta: 0 4px 8px rgb(15 23 42 / 0.06), 0 16px 48px rgb(15 23 42 / 0.12);
+  /* Sombras em camadas, discretas e planas — o acento vem da cor, não do
+     relevo (D-004). Base rgb(20 20 20) acompanha --color-text/--color-secondary. */
+  --shadow-baixa: 0 1px 2px rgb(20 20 20 / 0.04), 0 2px 6px rgb(20 20 20 / 0.03);
+  --shadow-media: 0 2px 4px rgb(20 20 20 / 0.04), 0 6px 18px rgb(20 20 20 / 0.06);
+  --shadow-alta: 0 4px 8px rgb(20 20 20 / 0.05), 0 12px 36px rgb(20 20 20 / 0.09);
 
   /* Duração de transição */
   --duracao-rapida: 150ms;
@@ -57,6 +58,8 @@
 
   /* Rastreamento de letras */
   --tracking-expandido: 0.18em;
+  --tracking-botao: 0.06em;
+  --tracking-nav: 0.08em;
 }
 
 @layer base {

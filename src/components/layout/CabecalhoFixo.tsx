@@ -34,7 +34,7 @@ export function CabecalhoFixo({ nomeNegocio, linkWhatsApp, secoes }: Propriedade
               <li key={secao.id}>
                 <a
                   href={`#${secao.id}`}
-                  className="text-micro font-medium text-text transition-colors hover:text-primary"
+                  className="text-nano font-semibold uppercase tracking-nav text-text transition-colors hover:text-primary"
                 >
                   {secao.rotulo}
                 </a>
