@@ -43,9 +43,9 @@ export function Botao({
   ...resto
 }: PropriedadesBotao) {
   const estilo = cn(
-    "inline-flex items-center justify-center gap-2 rounded-total font-semibold tracking-wide",
-    "transition-colors transition-transform duration-200 hover:-translate-y-0.5",
-    "motion-reduce:transform-none motion-reduce:transition-none",
+    "inline-flex items-center justify-center gap-2 rounded-total font-semibold uppercase tracking-botao",
+    "transition-colors duration-200",
+    "motion-reduce:transition-none",
     VARIANTES[variante],
     TAMANHOS[tamanho],
     className,

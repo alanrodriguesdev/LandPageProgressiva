@@ -27,18 +27,7 @@ export const negocio: Negocio = validar("negocio", esquemaNegocio, {
     { diaSemana: "domingo", fechado: true },
   ],
 
-  redesSociais: [
-    {
-      plataforma: "instagram",
-      url: "https://instagram.com/alansabiao",
-      identificador: "@alansabiao",
-    },
-    {
-      plataforma: "tiktok",
-      url: "https://tiktok.com/@alansabiao",
-      identificador: "@alansabiao",
-    },
-  ],
+  redesSociais: [],
 
   urlCanonica: "https://alansabiao.com.br",
 });
